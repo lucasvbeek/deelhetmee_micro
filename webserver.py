@@ -29,7 +29,7 @@ def api_create(prefix):
     os.remove(temp_path)
     export_file = open(export_path, "rb")
     files = {"sound": export_file}
-    params = {"name": file_name_no_path, "token": config.TOKEN}
+    params = {"name": file_name, "token": config.TOKEN}
     requests.post(f"{config.MAIN_SITE}/savesound", files=files, params=params)
     export_file.close()
     os.remove(export_path)
