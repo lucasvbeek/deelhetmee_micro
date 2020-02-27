@@ -33,7 +33,7 @@ def api_create(prefix):
     requests.post(f"{config.MAIN_SITE}/savesound", files=files, params=params)
     export_file.close()
     os.remove(export_path)
-    return file_name_no_path
+    return file_name
 
 @app.route("/prefixes")
 def api_prefixes():
