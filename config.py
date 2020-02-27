@@ -1,5 +1,5 @@
 DEBUG = True
-PORT = 8000
+PORT = 8282
 
 MAIN_SITE = "http://localhost:5000"
 
