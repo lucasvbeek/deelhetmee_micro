@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import config
 import audio_helper
@@ -41,6 +41,10 @@ def api_prefixes():
     all_files = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
     all_files = [f.split(".")[0] for f in all_files]
     return jsonify(all_files)
+
+@app.route("/sound/<path:path>")
+def static_sound(path):
+    return send_from_directory('sounds', path)
 
 
 if __name__ == "__main__":
